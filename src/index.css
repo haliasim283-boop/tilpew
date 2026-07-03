@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-navy-900 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Offset anchored sections so the sticky navbar never covers headings */
+  section[id] {
+    scroll-margin-top: 12rem;
+  }
+
+  ::selection {
+    background-color: #2563eb;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .container-tl {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Uppercase eyebrow label used above section titles */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-accent;
+  }
+
+  .section-title {
+    @apply font-sans text-3xl font-extrabold leading-tight tracking-tight text-navy-900 sm:text-4xl;
+  }
+
+  .code-chip {
+    @apply font-mono text-sm font-bold tracking-wider;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.6)] transition-all duration-200 hover:bg-accent-dark hover:shadow-[0_12px_28px_-8px_rgba(37,99,235,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300;
+  }
+
+  /* Faint dot-grid texture for service cards */
+  .card-dot-pattern {
+    background-image: radial-gradient(rgba(26, 39, 68, 0.1) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  /* Custom dropdown chevron for native selects */
+  .select-chevron {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a2744' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 1.1rem;
+    padding-right: 2.75rem;
+  }
+}
+
+@layer utilities {
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animated dashes along the hero flight paths */
+  .flightpath {
+    stroke-dasharray: 6 10;
+    animation: dash 14s linear infinite;
+  }
+
+  /* Auto-scrolling airline partner carousel: fades both edges to transparent */
+  .marquee-mask {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+  .marquee-track {
+    width: max-content;
+    animation: marquee 36s linear infinite;
+  }
+  .marquee-mask:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .flightpath,
+  .animate-float-slow,
+  .marquee-track {
+    animation: none !important;
+  }
+}
