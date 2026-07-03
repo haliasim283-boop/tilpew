@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import TopHeader from './components/TopHeader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -15,6 +16,37 @@ import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
+  useEffect(() => {
+    // Nav/CTA links still use href="#section" markup, but we intercept them so
+    // the address bar shows a clean path (e.g. /contact) instead of #contact.
+    const scrollToSection = (id) => {
+      const target = document.getElementById(id)
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
+    const handleClick = (event) => {
+      const anchor = event.target.closest('a[href^="#"]')
+      if (!anchor) return
+      const id = anchor.getAttribute('href').slice(1)
+      if (!document.getElementById(id)) return
+      event.preventDefault()
+      scrollToSection(id)
+      window.history.pushState(null, '', id === 'home' ? '/' : `/${id}`)
+    }
+
+    const handlePopState = () => {
+      const id = window.location.pathname === '/' ? 'home' : window.location.pathname.slice(1)
+      scrollToSection(id)
+    }
+
+    document.addEventListener('click', handleClick)
+    window.addEventListener('popstate', handlePopState)
+    return () => {
+      document.removeEventListener('click', handleClick)
+      window.removeEventListener('popstate', handlePopState)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-canvas">
       <TopHeader />
