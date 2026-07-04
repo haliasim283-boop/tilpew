@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e \"const icons = require\\('lucide-react'\\); console.log\\(Object.keys\\(icons\\).filter\\(k => /quote|tag|clipboard|file/i.test\\(k\\)\\).join\\('\\\\n'\\)\\)\")"
     ]
   }
 }

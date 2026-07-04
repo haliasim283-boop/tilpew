@@ -125,7 +125,10 @@ export default function Contact() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Full name" error={errors.name}>
                       <input
+                        id="name"
+                        name="name"
                         type="text"
+                        autoComplete="name"
                         value={form.name}
                         onChange={update('name')}
                         placeholder="e.g. Imran Khattak"
@@ -134,7 +137,10 @@ export default function Contact() {
                     </Field>
                     <Field label="Company name" optional error={errors.company}>
                       <input
+                        id="company"
+                        name="company"
                         type="text"
+                        autoComplete="organization"
                         value={form.company}
                         onChange={update('company')}
                         placeholder="e.g. Khattak Exports"
@@ -143,8 +149,11 @@ export default function Contact() {
                     </Field>
                     <Field label="Phone" error={errors.phone}>
                       <input
+                        id="phone"
+                        name="phone"
                         type="tel"
                         inputMode="numeric"
+                        autoComplete="tel"
                         value={form.phone}
                         onChange={(e) => {
                           const val = e.target.value.replace(/[^\d\s\-]/g, '')
@@ -160,7 +169,10 @@ export default function Contact() {
                     </Field>
                     <Field label="Email" error={errors.email}>
                       <input
+                        id="email"
+                        name="email"
                         type="email"
+                        autoComplete="email"
                         value={form.email}
                         onChange={update('email')}
                         placeholder="you@company.com"
@@ -168,7 +180,13 @@ export default function Contact() {
                       />
                     </Field>
                     <Field label="Origin city" error={errors.origin}>
-                      <select value={form.origin} onChange={update('origin')} className={selectCls(errors.origin)}>
+                      <select
+                        id="origin"
+                        name="origin"
+                        value={form.origin}
+                        onChange={update('origin')}
+                        className={selectCls(errors.origin)}
+                      >
                         <option value="" disabled>
                           Select origin
                         </option>
@@ -181,6 +199,8 @@ export default function Contact() {
                     </Field>
                     <Field label="Destination" error={errors.destination}>
                       <select
+                        id="destination"
+                        name="destination"
                         value={form.destination}
                         onChange={update('destination')}
                         className={selectCls(errors.destination)}
@@ -200,6 +220,8 @@ export default function Contact() {
                   <div className="mt-5">
                     <Field label="Message" optional error={errors.message}>
                       <textarea
+                        id="message"
+                        name="message"
                         rows={4}
                         value={form.message}
                         onChange={update('message')}

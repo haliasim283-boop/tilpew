@@ -85,7 +85,7 @@ export default function Airlines() {
             <div className="container-tl">
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                 {AIRLINES.map((airline) => (
-                  <AirlineCard key={airline.name} airline={airline} />
+                  <AirlineCard key={airline.code} airline={airline} />
                 ))}
               </div>
             </div>
