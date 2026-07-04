@@ -22,7 +22,7 @@ export default function Services() {
     >
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-x-0 top-0 h-screen bg-cover bg-top bg-no-repeat lg:inset-0 lg:h-auto lg:bg-center"
         style={{ backgroundImage: "url('/service/service.png')" }}
         aria-hidden="true"
       />
