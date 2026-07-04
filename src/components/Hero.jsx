@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-navy-900 pt-32 pb-20 sm:pt-36 lg:pt-72 lg:pb-28"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-navy-900 pt-32 pb-20 sm:pt-36 lg:pb-28"
     >
       {/* Lightfall WebGL background */}
       <div className="absolute inset-0" aria-hidden="true">

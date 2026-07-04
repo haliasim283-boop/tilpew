@@ -12,7 +12,7 @@ export default function TopHeader() {
   }, [open])
 
   return (
-    <div className="fixed inset-x-0 top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <div className="fixed lg:relative inset-x-0 top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       {/* ── Main bar ── */}
       <div className="container-tl flex h-28 items-center">
 
