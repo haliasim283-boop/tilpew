@@ -100,18 +100,21 @@ export const TESTIMONIALS = [
       'They consistently find us space on the Dubai and Sharjah flights even in peak season. In five years our shipments have never missed a connection.',
     name: 'Imran Khattak',
     company: 'Khattak Marble & Granite, Peshawar',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
   },
   {
     quote:
-      'Form-E filing and customs used to be our biggest headache. Trade International handles the whole document chain so our surgical instruments reach Europe on time, every time.',
+      'Form-E filing and customs used to be our biggest headache. Trade International handles the whole document chain so our surgical instruments reach Europe on time.',
     name: 'Sana Tariq',
     company: 'Tariq Surgical Instruments, Sialkot',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
   },
   {
     quote:
       'True door-to-door service with clear AWB tracking. I always know exactly where my dry-fruit consignment is, and the rates are honest. A genuinely reliable partner.',
     name: 'Bilal Ahmed',
     company: 'Frontier Dry Fruits, Peshawar',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
   },
 ]
 
@@ -149,6 +152,7 @@ export const CERTIFICATES = [
 ]
 
 export const NAV_LINKS = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Reviews', href: '#testimonials' },

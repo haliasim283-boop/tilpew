@@ -111,15 +111,13 @@ export default function Hero() {
                   <Field label="Status" value="In Transit" accent />
                 </div>
 
-                {/* barcode placeholder */}
-                <div className="mt-6 flex h-9 items-end gap-[3px] overflow-hidden rounded-md bg-white/90 px-3 py-2">
-                  {Array.from({ length: 38 }).map((_, i) => (
-                    <span
-                      key={i}
-                      className="w-[2px] shrink-0 bg-navy-900"
-                      style={{ height: `${30 + ((i * 53) % 60)}%` }}
-                    />
-                  ))}
+                {/* flight progress bar with airplane crossing left to right */}
+                <div className="relative mt-6 flex h-9 items-center overflow-hidden rounded-md bg-white/90 px-3">
+                  <span
+                    className="h-px w-full border-t border-dashed border-navy-900/25"
+                    aria-hidden="true"
+                  />
+                  <Plane className="absolute top-1/2 h-6 w-6 -translate-y-1/2 rotate-45 fill-black text-black animate-fly-across" />
                 </div>
               </div>
             </div>

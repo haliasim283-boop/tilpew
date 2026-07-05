@@ -20,14 +20,19 @@ export default function Services() {
       id="services"
       className="relative py-20 sm:py-24 lg:py-28"
     >
-      {/* Background image */}
+      {/* Background image: sticky on mobile so it stays pinned in place while
+          the section scrolls over it; static full-cover on desktop */}
       <div
-        className="absolute inset-x-0 top-0 h-screen bg-cover bg-top bg-no-repeat lg:inset-0 lg:h-auto lg:bg-center"
-        style={{ backgroundImage: "url('/service/service.png')" }}
+        className="sticky top-0 -mb-[100vh] h-screen w-full lg:absolute lg:inset-0 lg:mb-0 lg:h-auto"
         aria-hidden="true"
-      />
-      {/* Overlay to keep content readable */}
-      <div className="absolute inset-0 bg-canvas/20" aria-hidden="true" />
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat lg:bg-center"
+          style={{ backgroundImage: "url('/service/service.png')" }}
+        />
+        {/* Overlay to keep content readable */}
+        <div className="absolute inset-0 bg-canvas/20" />
+      </div>
 
       <div className="container-tl relative">
         <div className="rounded-2xl bg-navy-900/95 px-8 py-10 shadow-navy sm:px-10">

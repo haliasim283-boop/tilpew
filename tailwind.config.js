@@ -46,9 +46,16 @@ export default {
         dash: {
           to: { strokeDashoffset: '0' },
         },
+        'fly-across': {
+          '0%': { left: '-8%', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { left: '100%', opacity: '0' },
+        },
       },
       animation: {
         'float-slow': 'float-slow 6s ease-in-out infinite',
+        'fly-across': 'fly-across 3.5s ease-in-out infinite',
       },
     },
   },
