@@ -10,9 +10,7 @@ export default function SectionHeading({
   const alignment = align === 'center' ? 'mx-auto text-center items-center' : 'text-left items-start'
   return (
     <Reveal className={`flex max-w-2xl flex-col ${alignment}`}>
-      {eyebrow && (
-        <span className={`eyebrow ${light ? 'text-accent-light' : ''}`}>{eyebrow}</span>
-      )}
+      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h2 className={`mt-3 section-title ${light ? 'text-white' : ''}`}>{title}</h2>
       {intro && (
         <p

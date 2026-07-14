@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { MapPin, Mail, Phone, Menu, X, ArrowRight } from 'lucide-react'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from './Logo'
 import { COMPANY, NAV_LINKS } from '../data'
 
@@ -28,9 +29,9 @@ export default function TopHeader() {
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <a href="#home" aria-label="Trade International Logistics — home">
+          <Link to="/" aria-label="Trade International Logistics — home">
             <Logo className="h-24 w-auto object-contain" />
-          </a>
+          </Link>
 
           {/* spacer keeps logo centred */}
           <div className="h-10 w-10 shrink-0" />
@@ -38,13 +39,13 @@ export default function TopHeader() {
 
         {/* Desktop: logo left + contact info right */}
         <div className="hidden w-full items-center justify-between lg:flex">
-          <a href="#home" aria-label="Trade International Logistics — home">
+          <Link to="/" aria-label="Trade International Logistics — home">
             <Logo className="h-24 w-auto object-contain" />
-          </a>
+          </Link>
 
           <div className="flex items-center gap-6">
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <MapPin className="mt-0.5 h-7 w-7 shrink-0 text-amber-500" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-navy-400">Our Location</p>
                 <p className="text-sm font-semibold text-navy-900">{COMPANY.address}</p>
@@ -54,7 +55,7 @@ export default function TopHeader() {
             <div className="h-10 w-px bg-slate-200" />
 
             <div className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <Mail className="mt-0.5 h-7 w-7 shrink-0 text-amber-500" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-navy-400">Email Us</p>
                 <a href={`mailto:${COMPANY.email}`} className="text-sm font-semibold text-navy-900 transition-colors hover:text-accent">
@@ -66,7 +67,7 @@ export default function TopHeader() {
             <div className="h-10 w-px bg-slate-200" />
 
             <div className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <Phone className="mt-0.5 h-7 w-7 shrink-0 text-amber-500" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-navy-400">Call Us</p>
                 <a href={`tel:${COMPANY.phone}`} className="text-sm font-semibold text-navy-900 transition-colors hover:text-accent">
@@ -88,23 +89,24 @@ export default function TopHeader() {
           <ul className="flex flex-col">
             {NAV_LINKS.map(link => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <NavLink
+                  to={link.href}
+                  end={link.href === '/'}
                   onClick={() => setOpen(false)}
                   className="block border-b border-slate-100 py-3.5 text-base font-medium text-navy-600 transition-colors hover:text-accent"
                 >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => setOpen(false)}
             className="btn-primary mt-5 w-full"
           >
             Get a Quote <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

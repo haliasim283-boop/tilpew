@@ -36,11 +36,11 @@ export default function Destinations() {
         <div className="mt-14 grid gap-5 lg:grid-cols-12">
           {/* Network panel */}
           <Reveal className="lg:col-span-4">
-            <div className="relative isolate flex h-full min-h-[420px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-navy-900 p-7">
+            <div className="relative isolate flex h-full min-h-[420px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-amber-500 p-7">
               <BackgroundPattern className="opacity-80" />
 
               <div className="relative z-10">
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-accent-light">
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-white">
                   <Globe2 className="h-3.5 w-3.5" /> Network reach
                 </span>
                 <div className="mt-3 font-mono text-5xl font-extrabold text-white">
@@ -52,7 +52,7 @@ export default function Destinations() {
               </div>
 
               <div className="relative z-10 mt-6">
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400">
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
                   Regions served
                 </p>
                 <div className="grid grid-cols-3 gap-2">
@@ -62,7 +62,7 @@ export default function Destinations() {
                       className="flex flex-col items-center rounded-xl bg-white/5 px-2 py-3 text-center backdrop-blur-sm"
                     >
                       <span className="font-mono text-3xl font-extrabold text-white">{r.count}</span>
-                      <span className="mt-1 text-[10px] font-semibold text-navy-300">{r.label}</span>
+                      <span className="mt-1 text-[10px] font-semibold text-white">{r.label}</span>
                     </div>
                   ))}
                 </div>
@@ -75,7 +75,7 @@ export default function Destinations() {
                     className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2 text-sm backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2 text-navy-100">
-                      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-light" />
+                      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-900" />
                       {country}
                     </span>
                     <span className="font-mono text-xs font-bold text-white">{count}</span>

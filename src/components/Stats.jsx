@@ -4,7 +4,7 @@ import { STATS } from '../data'
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-amber-500 py-16 sm:py-20">
       {/* faint route line accent */}
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.5]"
@@ -15,7 +15,7 @@ export default function Stats() {
         <path
           d="M0,180 C360,60 720,220 1080,120 1260,70 1380,150 1440,110"
           fill="none"
-          stroke="#2563eb"
+          stroke="#1a2744"
           strokeOpacity="0.18"
           strokeWidth="1.5"
           strokeDasharray="5 9"
@@ -30,10 +30,10 @@ export default function Stats() {
                 <Counter to={stat.value} />
                 {stat.suffix}
               </div>
-              <div className="mt-2 text-sm font-semibold text-navy-100 sm:text-base">
+              <div className="mt-2 text-sm font-semibold text-navy-900 sm:text-base">
                 {stat.label}
               </div>
-              <div className="mt-1 text-xs text-navy-300">{stat.note}</div>
+              <div className="mt-1 text-xs text-navy-800">{stat.note}</div>
             </Reveal>
           ))}
         </div>

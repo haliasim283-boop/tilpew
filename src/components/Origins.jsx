@@ -35,8 +35,8 @@ export default function Origins() {
                   <div>
                     <h3 className="text-base font-bold text-white">{origin.city}</h3>
                     <p className="mt-0.5 text-xs text-white/70">{origin.note}</p>
-                    <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-accent-light">
-                      <PlaneTakeoff className="h-3 w-3" /> Departs from
+                    <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide text-amber-500">
+                      <PlaneTakeoff className="h-4 w-4" /> Departs from
                     </span>
                   </div>
                 </div>

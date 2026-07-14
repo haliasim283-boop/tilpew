@@ -13,7 +13,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative flex min-h-screen items-center overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
     >
       <div
         className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-accent/10 blur-3xl"

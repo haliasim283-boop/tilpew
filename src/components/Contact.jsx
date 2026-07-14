@@ -61,9 +61,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-24 lg:py-28">
+    <section id="contact" className="pb-20 pt-40 sm:pb-24 sm:pt-44 lg:pb-28 lg:pt-32">
       <div className="container-tl">
-        <div className="rounded-2xl bg-navy-900/95 px-8 py-10 shadow-navy sm:px-10">
+        <div className="rounded-2xl bg-navy-900 px-8 py-10 shadow-navy sm:px-10">
           <SectionHeading
             eyebrow="Get a Quote"
             title="Let's move your cargo"
@@ -76,7 +76,7 @@ export default function Contact() {
           {/* Info panel */}
           <Reveal className="lg:col-span-2">
             <div className="flex h-full flex-col rounded-2xl bg-navy-900 p-8 text-white">
-              <span className="eyebrow text-accent-light">Reach Us Directly</span>
+              <span className="eyebrow">Reach Us Directly</span>
               <h3 className="mt-3 text-xl font-bold tracking-tight">Contact details</h3>
 
               <ul className="mt-8 space-y-5">
@@ -231,7 +231,7 @@ export default function Contact() {
                     </Field>
                   </div>
 
-                  <button type="submit" className="btn-primary mt-7 w-full bg-navy-900 hover:bg-navy-800 sm:w-auto">
+                  <button type="submit" className="btn-primary mt-7 w-full bg-amber-500 hover:bg-amber-600 sm:w-auto">
                     <Send className="h-4 w-4" /> Send enquiry
                   </button>
                 </form>
@@ -248,7 +248,7 @@ function ContactItem({ icon: Icon, label, value, href }) {
   const content = (
     <div className="flex items-start gap-3">
       <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/10">
-        <Icon className="h-5 w-5 text-accent-light" />
+        <Icon className="h-5 w-5 text-amber-500" />
       </span>
       <div>
         <div className="text-[11px] font-semibold uppercase tracking-wide text-navy-300">{label}</div>

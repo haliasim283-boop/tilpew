@@ -1,4 +1,5 @@
 import { ArrowRight, Plane, ShieldCheck, Clock3 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Lightfall from './Lightfall'
 import { COMPANY } from '../data'
 
@@ -29,7 +30,7 @@ export default function Hero() {
         />
       </div>
       {/* Dark veil so streaks don't overpower the content */}
-      <div className="absolute inset-0 bg-navy-900/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-navy-900/35" aria-hidden="true" />
 
       <div className="container-tl relative">
         <div className="grid items-center gap-12 lg:grid-cols-12">
@@ -39,14 +40,14 @@ export default function Hero() {
               <p className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 {COMPANY.name}
               </p>
-              <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.25em] text-accent-light">
+              <p className="mt-2 text-[13px] font-bold uppercase tracking-[0.25em] text-amber-500">
                 Est. {COMPANY.founded}
               </p>
             </div>
 
             <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
               Pakistan&apos;s Trusted{' '}
-              <span className="text-accent-light">Air Freight</span> Partner
+              <span className="text-amber-500">Air Freight</span> Partner
             </h1>
 
             <p className="mt-3 font-mono text-sm font-semibold uppercase tracking-[0.22em] text-navy-200">
@@ -59,12 +60,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#contact" className="btn-primary">
+              <Link to="/contact" className="btn-primary">
                 Get a Quote <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#services" className="btn-ghost">
+              </Link>
+              <Link to="/services" className="btn-ghost">
                 Explore Services
-              </a>
+              </Link>
             </div>
 
             {/* trust row */}

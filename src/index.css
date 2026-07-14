@@ -35,7 +35,7 @@
 
   /* Uppercase eyebrow label used above section titles */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-accent;
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-amber-500;
   }
 
   .section-title {
@@ -47,7 +47,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.6)] transition-all duration-200 hover:bg-accent-dark hover:shadow-[0_12px_28px_-8px_rgba(37,99,235,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-px;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.6)] transition-all duration-200 hover:bg-accent-dark hover:shadow-[0_12px_28px_-8px_rgba(37,99,235,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-px;
   }
 
   .btn-ghost {
@@ -107,6 +107,10 @@
   .marquee-track {
     width: max-content;
     animation: marquee 36s linear infinite;
+  }
+  /* Same loop, played backwards so content drifts right instead of left */
+  .marquee-track-reverse {
+    animation-direction: reverse;
   }
   .marquee-mask:hover .marquee-track {
     animation-play-state: paused;

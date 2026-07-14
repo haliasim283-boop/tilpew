@@ -11,7 +11,7 @@ export const COMPANY = {
   email: 'info@tradeintl.pk',
   phone: '+92 302 8582323',
   address: 'Peshawar, Khyber Pakhtunkhwa, Pakistan',
-  hours: 'Saturday – Thursday, 09:00 – 22:00',
+  hours: 'Monday – Friday, 09:00 – 17:00',
 }
 
 // Live "years in business" so the counter stays correct every year.
@@ -94,6 +94,17 @@ export const AIRLINES = [
   { name: 'DHL', mark: 'DHL', code: 'DHL', logo: '/airlines/dhl.jpg' },
 ]
 
+// Clients, carriers and bodies we've worked with. `logo` is optional —
+// entries without one render as a text wordmark instead.
+export const PARTNERS = [
+  { name: 'Pakistan Customs', logo: '/features/customs.jpg' },
+  { name: 'IATA', logo: '/features/iata.png' },
+  { name: 'DHL', logo: '/features/dhl.jpg' },
+  { name: 'Emirates', logo: '/features/emirates.jpg' },
+  { name: 'PIA', logo: '/features/pia.jpg' },
+  { name: 'Qatar Airways', logo: '/features/qatar.png' },
+]
+
 export const TESTIMONIALS = [
   {
     quote:
@@ -152,9 +163,8 @@ export const CERTIFICATES = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Reviews', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
 ]
