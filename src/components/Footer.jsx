@@ -26,7 +26,7 @@ const linkGroups = [
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-navy-950 text-navy-200">
+    <footer className="relative z-10 bg-navy-950 text-navy-200">
       <div className="container-tl py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
@@ -83,8 +83,8 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="container-tl flex flex-col gap-3 py-6 text-xs text-navy-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>
+        <div className="container-tl flex flex-col gap-3 py-6 pb-20 text-xs text-navy-400 sm:flex-row sm:items-center sm:justify-between sm:pb-6">
+          <p className="pr-20 sm:pr-0">
             © {COMPANY.founded}–{year} {COMPANY.name}. All rights reserved.
           </p>
         </div>
